@@ -1,0 +1,13 @@
+{
+  "name": "toeic-lc-split",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "split": "tools/batch.sh"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

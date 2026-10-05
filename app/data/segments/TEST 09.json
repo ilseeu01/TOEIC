@@ -1,0 +1,595 @@
+{
+ "file": "TEST 09.mp3",
+ "sha256": "c08d4867525187ac936a76ea40f07994256185dd67a4e514b47f5aec8c3c1c8d",
+ "duration": 2816.81,
+ "items": [
+  {
+   "numbers": [
+    1
+   ],
+   "part": 1,
+   "start": 88.34,
+   "source": "asr",
+   "verified": true,
+   "end": 108.68
+  },
+  {
+   "numbers": [
+    2
+   ],
+   "part": 1,
+   "start": 112.82,
+   "source": "asr",
+   "verified": true,
+   "end": 134.78
+  },
+  {
+   "numbers": [
+    3
+   ],
+   "part": 1,
+   "start": 145.84,
+   "source": "asr",
+   "verified": true,
+   "end": 167.7
+  },
+  {
+   "numbers": [
+    4
+   ],
+   "part": 1,
+   "start": 171.96,
+   "source": "asr",
+   "verified": true,
+   "end": 193.04
+  },
+  {
+   "numbers": [
+    5
+   ],
+   "part": 1,
+   "start": 197.22,
+   "source": "asr",
+   "verified": true,
+   "end": 217.94
+  },
+  {
+   "numbers": [
+    6
+   ],
+   "part": 1,
+   "start": 222.12,
+   "source": "asr",
+   "verified": true,
+   "end": 245.42
+  },
+  {
+   "numbers": [
+    7
+   ],
+   "part": 2,
+   "start": 284.28,
+   "source": "asr",
+   "verified": true,
+   "end": 298.96
+  },
+  {
+   "numbers": [
+    8
+   ],
+   "part": 2,
+   "start": 303.12,
+   "source": "asr",
+   "verified": true,
+   "end": 319.66
+  },
+  {
+   "numbers": [
+    9
+   ],
+   "part": 2,
+   "start": 323.82,
+   "source": "recheck",
+   "verified": true,
+   "end": 338.32
+  },
+  {
+   "numbers": [
+    10
+   ],
+   "part": 2,
+   "start": 342.46,
+   "source": "asr",
+   "verified": true,
+   "end": 356.74
+  },
+  {
+   "numbers": [
+    11
+   ],
+   "part": 2,
+   "start": 360.88,
+   "source": "asr",
+   "verified": true,
+   "end": 378.28
+  },
+  {
+   "numbers": [
+    12
+   ],
+   "part": 2,
+   "start": 382.42,
+   "source": "asr",
+   "verified": true,
+   "end": 397.8
+  },
+  {
+   "numbers": [
+    13
+   ],
+   "part": 2,
+   "start": 401.92,
+   "source": "asr",
+   "verified": true,
+   "end": 418.24
+  },
+  {
+   "numbers": [
+    14
+   ],
+   "part": 2,
+   "start": 422.38,
+   "source": "asr",
+   "verified": true,
+   "end": 438.62
+  },
+  {
+   "numbers": [
+    15
+   ],
+   "part": 2,
+   "start": 442.74,
+   "source": "asr",
+   "verified": true,
+   "end": 458.72
+  },
+  {
+   "numbers": [
+    16
+   ],
+   "part": 2,
+   "start": 462.9,
+   "source": "asr",
+   "verified": true,
+   "end": 479.12
+  },
+  {
+   "numbers": [
+    17
+   ],
+   "part": 2,
+   "start": 483.24,
+   "source": "asr",
+   "verified": true,
+   "end": 500.46
+  },
+  {
+   "numbers": [
+    18
+   ],
+   "part": 2,
+   "start": 504.6,
+   "source": "asr",
+   "verified": true,
+   "end": 520.46
+  },
+  {
+   "numbers": [
+    19
+   ],
+   "part": 2,
+   "start": 524.6,
+   "source": "recheck",
+   "verified": true,
+   "end": 542.32
+  },
+  {
+   "numbers": [
+    20
+   ],
+   "part": 2,
+   "start": 546.46,
+   "source": "asr",
+   "verified": true,
+   "end": 561.62
+  },
+  {
+   "numbers": [
+    21
+   ],
+   "part": 2,
+   "start": 565.74,
+   "source": "asr",
+   "verified": true,
+   "end": 581.74
+  },
+  {
+   "numbers": [
+    22
+   ],
+   "part": 2,
+   "start": 585.9,
+   "source": "asr",
+   "verified": true,
+   "end": 602.06
+  },
+  {
+   "numbers": [
+    23
+   ],
+   "part": 2,
+   "start": 606.18,
+   "source": "asr",
+   "verified": true,
+   "end": 622.28
+  },
+  {
+   "numbers": [
+    24
+   ],
+   "part": 2,
+   "start": 626.4,
+   "source": "asr",
+   "verified": true,
+   "end": 643.38
+  },
+  {
+   "numbers": [
+    25
+   ],
+   "part": 2,
+   "start": 647.5,
+   "source": "asr",
+   "verified": true,
+   "end": 663.52
+  },
+  {
+   "numbers": [
+    26
+   ],
+   "part": 2,
+   "start": 667.62,
+   "source": "asr",
+   "verified": true,
+   "end": 685.58
+  },
+  {
+   "numbers": [
+    27
+   ],
+   "part": 2,
+   "start": 689.72,
+   "source": "asr",
+   "verified": true,
+   "end": 706.16
+  },
+  {
+   "numbers": [
+    28
+   ],
+   "part": 2,
+   "start": 710.3,
+   "source": "asr",
+   "verified": true,
+   "end": 726.1
+  },
+  {
+   "numbers": [
+    29
+   ],
+   "part": 2,
+   "start": 730.22,
+   "source": "estimated",
+   "verified": true,
+   "end": 747.6
+  },
+  {
+   "numbers": [
+    30
+   ],
+   "part": 2,
+   "start": 751.74,
+   "source": "asr",
+   "verified": true,
+   "end": 768.38
+  },
+  {
+   "numbers": [
+    31
+   ],
+   "part": 2,
+   "start": 772.48,
+   "source": "asr",
+   "verified": true,
+   "end": 789.96
+  },
+  {
+   "numbers": [
+    32,
+    33,
+    34
+   ],
+   "part": 3,
+   "start": 821.96,
+   "source": "recheck",
+   "verified": true,
+   "end": 894.86
+  },
+  {
+   "numbers": [
+    35,
+    36,
+    37
+   ],
+   "part": 3,
+   "start": 902.0,
+   "source": "recheck",
+   "verified": true,
+   "end": 976.62
+  },
+  {
+   "numbers": [
+    38,
+    39,
+    40
+   ],
+   "part": 3,
+   "start": 983.78,
+   "source": "asr",
+   "verified": true,
+   "end": 1056.64
+  },
+  {
+   "numbers": [
+    41,
+    42,
+    43
+   ],
+   "part": 3,
+   "start": 1063.88,
+   "source": "asr",
+   "verified": true,
+   "end": 1140.44
+  },
+  {
+   "numbers": [
+    44,
+    45,
+    46
+   ],
+   "part": 3,
+   "start": 1154.56,
+   "source": "asr",
+   "verified": true,
+   "end": 1227.86
+  },
+  {
+   "numbers": [
+    47,
+    48,
+    49
+   ],
+   "part": 3,
+   "start": 1235.06,
+   "source": "asr",
+   "verified": true,
+   "end": 1316.64
+  },
+  {
+   "numbers": [
+    50,
+    51,
+    52
+   ],
+   "part": 3,
+   "start": 1323.82,
+   "source": "asr",
+   "verified": true,
+   "end": 1397.56
+  },
+  {
+   "numbers": [
+    53,
+    54,
+    55
+   ],
+   "part": 3,
+   "start": 1404.7,
+   "source": "asr",
+   "verified": true,
+   "end": 1481.72
+  },
+  {
+   "numbers": [
+    56,
+    57,
+    58
+   ],
+   "part": 3,
+   "start": 1488.96,
+   "source": "asr",
+   "verified": true,
+   "end": 1561.44
+  },
+  {
+   "numbers": [
+    59,
+    60,
+    61
+   ],
+   "part": 3,
+   "start": 1568.62,
+   "source": "asr",
+   "verified": true,
+   "end": 1639.92
+  },
+  {
+   "numbers": [
+    62,
+    63,
+    64
+   ],
+   "part": 3,
+   "start": 1647.1,
+   "source": "asr",
+   "verified": true,
+   "end": 1733.3
+  },
+  {
+   "numbers": [
+    65,
+    66,
+    67
+   ],
+   "part": 3,
+   "start": 1747.48,
+   "source": "asr",
+   "verified": true,
+   "end": 1828.78
+  },
+  {
+   "numbers": [
+    68,
+    69,
+    70
+   ],
+   "part": 3,
+   "start": 1839.98,
+   "source": "asr",
+   "verified": true,
+   "end": 1917.14
+  },
+  {
+   "numbers": [
+    71,
+    72,
+    73
+   ],
+   "part": 4,
+   "start": 1954.28,
+   "source": "asr",
+   "verified": true,
+   "end": 2028.82
+  },
+  {
+   "numbers": [
+    74,
+    75,
+    76
+   ],
+   "part": 4,
+   "start": 2036.04,
+   "source": "asr",
+   "verified": true,
+   "end": 2111.02
+  },
+  {
+   "numbers": [
+    77,
+    78,
+    79
+   ],
+   "part": 4,
+   "start": 2118.2,
+   "source": "asr",
+   "verified": true,
+   "end": 2198.6
+  },
+  {
+   "numbers": [
+    80,
+    81,
+    82
+   ],
+   "part": 4,
+   "start": 2205.84,
+   "source": "asr",
+   "verified": true,
+   "end": 2283.96
+  },
+  {
+   "numbers": [
+    83,
+    84,
+    85
+   ],
+   "part": 4,
+   "start": 2298.02,
+   "source": "asr",
+   "verified": true,
+   "end": 2379.84
+  },
+  {
+   "numbers": [
+    86,
+    87,
+    88
+   ],
+   "part": 4,
+   "start": 2387.08,
+   "source": "asr",
+   "verified": true,
+   "end": 2460.86
+  },
+  {
+   "numbers": [
+    89,
+    90,
+    91
+   ],
+   "part": 4,
+   "start": 2468.18,
+   "source": "asr",
+   "verified": true,
+   "end": 2549.16
+  },
+  {
+   "numbers": [
+    92,
+    93,
+    94
+   ],
+   "part": 4,
+   "start": 2556.36,
+   "source": "asr",
+   "verified": true,
+   "end": 2628.52
+  },
+  {
+   "numbers": [
+    95,
+    96,
+    97
+   ],
+   "part": 4,
+   "start": 2635.74,
+   "source": "asr",
+   "verified": true,
+   "end": 2724.34
+  },
+  {
+   "numbers": [
+    98,
+    99,
+    100
+   ],
+   "part": 4,
+   "start": 2731.54,
+   "source": "asr",
+   "verified": true,
+   "end": 2809.38
+  }
+ ],
+ "createdAt": 1791142291436,
+ "model": "faster-whisper small.en"
+}

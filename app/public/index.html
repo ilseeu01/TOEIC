@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>토익 LC 문제별 듣기</title>
+<style>
+  :root { --bg:#f6f7f9; --panel:#fff; --line:#e2e5ea; --text:#1c2430; --muted:#6b7584; --accent:#2563eb; --weak:#e8efff; --warn:#b45309; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#12151b; --panel:#1a1f27; --line:#2b323d; --text:#e6e9ee; --muted:#96a0ae; --accent:#6d9bff; --weak:#1f2b45; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif; padding-bottom:150px; }
+  button { font:inherit; color:inherit; cursor:pointer; }
+  header { position:sticky; top:0; z-index:5; background:var(--panel); border-bottom:1px solid var(--line); padding:10px 16px; }
+  h1 { font-size:16px; margin:0 0 8px; }
+  .tests { display:flex; gap:6px; flex-wrap:wrap; }
+  .tests button { border:1px solid var(--line); background:var(--panel); border-radius:999px; padding:5px 12px; font-size:14px; }
+  .tests button.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .tests button .st { font-size:11px; opacity:.75; margin-left:4px; }
+  main { max-width:900px; margin:0 auto; padding:12px 16px; }
+  .part { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:12px; margin-bottom:12px; }
+  .part h2 { font-size:14px; margin:0 0 8px; color:var(--muted); font-weight:600; }
+  .nums { display:flex; flex-wrap:wrap; gap:6px; }
+  .grp { display:flex; gap:4px; padding:3px; border:1px dashed var(--line); border-radius:10px; }
+  .n { width:50px; height:48px; border-radius:9px; border:1px solid var(--line); background:var(--panel); font-weight:700; font-size:16px; }
+  .n.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .n.miss { opacity:.35; text-decoration:line-through; }
+  .n.adj::after { content:'•'; color:var(--warn); margin-left:1px; }
+  .msg { color:var(--muted); padding:24px 4px; }
+  .bar { height:6px; background:var(--bg); border-radius:999px; overflow:hidden; border:1px solid var(--line); margin:6px 0; }
+  .bar > div { height:100%; background:var(--accent); width:0; }
+  footer { position:fixed; left:0; right:0; bottom:0; background:var(--panel); border-top:1px solid var(--line); padding:10px 16px calc(10px + env(safe-area-inset-bottom)); }
+  .row { display:flex; align-items:center; gap:10px; max-width:900px; margin:0 auto; flex-wrap:wrap; }
+  .title { font-weight:700; min-width:150px; }
+  .time { font:13px ui-monospace,monospace; color:var(--muted); }
+  .pp { width:52px; height:52px; border-radius:50%; border:0; background:var(--accent); color:#fff; font-size:18px; }
+  .sm { border:1px solid var(--line); background:var(--panel); border-radius:8px; padding:5px 9px; font-size:13px; }
+  .adjust { display:none; gap:6px; align-items:center; flex-wrap:wrap; font-size:13px; color:var(--muted); }
+  .adjust.show { display:flex; }
+  .grow { flex:1; min-width:160px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>토익 LC 문제별 듣기</h1>
+  <div class="tests" id="tests"></div>
+</header>
+<main id="main"><div class="msg">불러오는 중…</div></main>
+<footer>
+  <div class="row">
+    <button class="pp" id="pp" aria-label="재생/일시정지" disabled>▶</button>
+    <div class="grow">
+      <div class="title" id="title">번호를 누르세요</div>
+      <div class="bar"><div id="prog"></div></div>
+      <div class="time" id="time"></div>
+    </div>
+    <button class="sm" id="adjBtn" disabled>구간 조정</button>
+  </div>
+  <div class="row adjust" id="adjust">
+    <span>시작</span><button class="sm" data-d="start,-1">−1초</button><button class="sm" data-d="start,1">+1초</button>
+    <span>끝</span><button class="sm" data-d="end,-1">−1초</button><button class="sm" data-d="end,1">+1초</button>
+    <button class="sm" id="reset">자동값으로</button>
+    <span id="adjInfo"></span>
+  </div>
+</footer>
+<audio id="audio" preload="auto"></audio>
+<script>
+const $ = (id) => document.getElementById(id)
+const audio = $('audio')
+audio.preservesPitch = true
+let tests = [], test = null, data = null, cur = null, gen = 0, timer = null
+
+const fmt = (s) => { s = Math.max(0, s); const m = Math.floor(s / 60); return `${m}:${(s - m * 60).toFixed(1).padStart(4, '0')}` }
+const label = (it) => it.numbers.length > 1 ? `${it.numbers[0]}~${it.numbers.at(-1)}번 (대화+질문)` : `${it.numbers[0]}번`
+
+async function loadTests() {
+  tests = await (await fetch('/api/tests')).json()
+  const box = $('tests')
+  box.innerHTML = ''
+  for (const t of tests) {
+    const b = document.createElement('button')
+    b.className = t.name === test ? 'on' : ''
+    const st = t.status === 'ready' ? '' : t.status === 'processing' ? `분할 중 ${t.progress}%` : t.status === 'queued' ? '대기' : t.status === 'unsplit' ? '분할 안 됨' : '오류'
+    b.innerHTML = `${t.name.replace(/\.mp3$/i, '')}<span class="st">${st}</span>`
+    b.onclick = () => openTest(t.name)
+    box.appendChild(b)
+  }
+  if (!test) {
+    const saved = localStorage.getItem('lc.test')
+    const first = tests.find((t) => t.name === saved) ?? tests.find((t) => t.status === 'ready') ?? tests[0]
+    if (first) openTest(first.name)
+  }
+  if (tests.some((t) => t.status === 'processing' || t.status === 'queued')) setTimeout(loadTests, 5000)
+}
+
+async function openTest(name) {
+  stop()
+  test = name
+  try { localStorage.setItem('lc.test', name) } catch {}
+  for (const b of $('tests').children) b.className = b.textContent.startsWith(name.replace(/\.mp3$/i, '')) ? 'on' : ''
+  const t = tests.find((x) => x.name === name)
+  if (!t || t.status !== 'ready') {
+    data = null
+    $('main').innerHTML = t?.status === 'unsplit'
+      ? `<div class="msg">${name}: 분할 결과가 없습니다. 이 컴퓨터에는 Whisper(자동 분할)가 설정되어 있지 않습니다. README 의 '새 MP3 분할'을 참고하세요.</div>`
+      : `<div class="msg">${name}: 자동 분할 ${t?.status === 'processing' ? `진행 중 (${t.progress}%)` : '대기 중'}입니다. 끝나면 번호가 나타납니다.</div>`
+    if (t && (t.status === 'processing' || t.status === 'queued')) setTimeout(async () => { await loadTests(); if (test === name && tests.find((x) => x.name === name)?.status === 'ready') openTest(name) }, 5000)
+    return
+  }
+  data = await (await fetch(`/api/tests/${encodeURIComponent(name)}`)).json()
+  audio.src = `/api/audio/${encodeURIComponent(name)}`
+  render()
+}
+
+function render() {
+  const parts = { 1: 'Part 1 (사진 묘사)', 2: 'Part 2 (질의응답)', 3: 'Part 3 (대화 · 3문제씩 묶음)', 4: 'Part 4 (담화 · 3문제씩 묶음)' }
+  const main = $('main')
+  main.innerHTML = ''
+  for (const p of [1, 2, 3, 4]) {
+    const sec = document.createElement('section')
+    sec.className = 'part'
+    sec.innerHTML = `<h2>${parts[p]}</h2>`
+    const nums = document.createElement('div')
+    nums.className = 'nums'
+    for (const it of data.items.filter((i) => i.part === p)) {
+      const wrap = it.numbers.length > 1 ? Object.assign(document.createElement('div'), { className: 'grp' }) : nums
+      for (const n of it.numbers) {
+        const b = document.createElement('button')
+        b.className = 'n' + (it.start == null ? ' miss' : '') + (it.adjusted ? ' adj' : '') + (cur === it ? ' on' : '')
+        b.textContent = n
+        b.dataset.n = n
+        b.title = it.start == null ? '자동 분할 실패' : `${fmt(it.start)} – ${fmt(it.end)}${it.adjusted ? ' (조정됨)' : ''}`
+        b.onclick = () => play(it)
+        wrap.appendChild(b)
+      }
+      if (wrap !== nums) nums.appendChild(wrap)
+    }
+    sec.appendChild(nums)
+    main.appendChild(sec)
+  }
+  updateBar()
+}
+
+function stop() {
+  gen++
+  clearTimeout(timer)
+  audio.pause()
+}
+
+// 구간 시작으로 이동해 재생하고, 끝점에서 정확히 멈춘다(문제를 바꾸면 이전 재생은 즉시 취소)
+async function play(it) {
+  if (it.start == null) return alert('이 문제는 자동 분할에 실패했습니다.')
+  stop()
+  const g = gen
+  cur = it
+  render()
+  audio.currentTime = it.start
+  await new Promise((r) => { const f = () => r(); audio.addEventListener('seeked', f, { once: true }); setTimeout(f, 3000) })
+  if (g !== gen) return
+  try { await audio.play() } catch {}
+  watch(g)
+}
+
+function watch(g) {
+  if (g !== gen || !cur) return
+  const t = audio.currentTime
+  if (t >= cur.end - 0.004) { audio.pause(); updateBar(); return }
+  const left = (cur.end - t) / (audio.playbackRate || 1) * 1000
+  timer = setTimeout(() => watch(g), audio.paused ? 100 : Math.max(4, Math.min(200, left - 30)))
+}
+
+function updateBar() {
+  const it = cur
+  $('pp').disabled = !it
+  $('adjBtn').disabled = !it
+  if (!it) return
+  const len = it.end - it.start
+  const pos = Math.min(len, Math.max(0, audio.currentTime - it.start))
+  $('title').textContent = label(it)
+  $('prog').style.width = `${(pos / len) * 100}%`
+  $('time').textContent = `${fmt(pos)} / ${fmt(len)}   (원본 ${fmt(it.start)} – ${fmt(it.end)})`
+  $('pp').textContent = audio.paused ? '▶' : '❚❚'
+  $('adjInfo').textContent = it.adjusted ? `조정됨 · 자동값 ${fmt(it.auto.start)} – ${fmt(it.auto.end)}` : '자동 분할 값'
+}
+setInterval(updateBar, 200)
+
+$('pp').onclick = () => {
+  if (!cur) return
+  if (!audio.paused) return audio.pause()
+  // 끝까지 들었으면 처음부터, 아니면 이어서
+  if (audio.currentTime >= cur.end - 0.05 || audio.currentTime < cur.start) play(cur)
+  else { clearTimeout(timer); audio.play(); watch(gen) }
+}
+$('adjBtn').onclick = () => $('adjust').classList.toggle('show')
+
+async function saveAdjust(body) {
+  const key = cur.numbers[0]
+  const r = await fetch(`/api/tests/${encodeURIComponent(test)}/adjust`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key, ...body }) })
+  if (!r.ok) return alert(await r.text())
+  data = await (await fetch(`/api/tests/${encodeURIComponent(test)}`)).json()
+  const it = data.items.find((i) => i.numbers[0] === key)
+  play(it)
+}
+for (const b of document.querySelectorAll('[data-d]')) {
+  b.onclick = () => {
+    const [side, d] = b.dataset.d.split(',')
+    const next = { start: cur.start, end: cur.end }
+    next[side] = Math.max(0, next[side] + Number(d))
+    saveAdjust(next)
+  }
+}
+$('reset').onclick = () => saveAdjust({ reset: true })
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === ' ' && cur) { e.preventDefault(); $('pp').click() }
+})
+loadTests()
+</script>
+</body>
+</html>

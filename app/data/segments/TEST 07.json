@@ -1,0 +1,595 @@
+{
+ "file": "TEST 07.mp3",
+ "sha256": "1727898515bc9c7cd405699e02114aee4673927b85c95893f56d2f4ed27339b2",
+ "duration": 2951.445,
+ "items": [
+  {
+   "numbers": [
+    1
+   ],
+   "part": 1,
+   "start": 88.3,
+   "source": "recheck",
+   "verified": true,
+   "end": 110.44
+  },
+  {
+   "numbers": [
+    2
+   ],
+   "part": 1,
+   "start": 114.62,
+   "source": "asr",
+   "verified": true,
+   "end": 136.48
+  },
+  {
+   "numbers": [
+    3
+   ],
+   "part": 1,
+   "start": 147.52,
+   "source": "asr",
+   "verified": true,
+   "end": 170.08
+  },
+  {
+   "numbers": [
+    4
+   ],
+   "part": 1,
+   "start": 174.26,
+   "source": "asr",
+   "verified": true,
+   "end": 197.54
+  },
+  {
+   "numbers": [
+    5
+   ],
+   "part": 1,
+   "start": 201.72,
+   "source": "asr",
+   "verified": true,
+   "end": 225.24
+  },
+  {
+   "numbers": [
+    6
+   ],
+   "part": 1,
+   "start": 229.48,
+   "source": "asr",
+   "verified": true,
+   "end": 253.68
+  },
+  {
+   "numbers": [
+    7
+   ],
+   "part": 2,
+   "start": 292.48,
+   "source": "asr",
+   "verified": true,
+   "end": 308.6
+  },
+  {
+   "numbers": [
+    8
+   ],
+   "part": 2,
+   "start": 312.74,
+   "source": "asr",
+   "verified": true,
+   "end": 328.98
+  },
+  {
+   "numbers": [
+    9
+   ],
+   "part": 2,
+   "start": 333.14,
+   "source": "asr",
+   "verified": true,
+   "end": 352.06
+  },
+  {
+   "numbers": [
+    10
+   ],
+   "part": 2,
+   "start": 356.18,
+   "source": "asr",
+   "verified": true,
+   "end": 374.52
+  },
+  {
+   "numbers": [
+    11
+   ],
+   "part": 2,
+   "start": 378.7,
+   "source": "estimated",
+   "verified": true,
+   "end": 399.1
+  },
+  {
+   "numbers": [
+    12
+   ],
+   "part": 2,
+   "start": 403.34,
+   "source": "asr",
+   "verified": true,
+   "end": 422.22
+  },
+  {
+   "numbers": [
+    13
+   ],
+   "part": 2,
+   "start": 426.42,
+   "source": "asr",
+   "verified": true,
+   "end": 444.5
+  },
+  {
+   "numbers": [
+    14
+   ],
+   "part": 2,
+   "start": 448.72,
+   "source": "asr",
+   "verified": true,
+   "end": 465.6
+  },
+  {
+   "numbers": [
+    15
+   ],
+   "part": 2,
+   "start": 469.8,
+   "source": "asr",
+   "verified": true,
+   "end": 486.58
+  },
+  {
+   "numbers": [
+    16
+   ],
+   "part": 2,
+   "start": 490.74,
+   "source": "asr",
+   "verified": true,
+   "end": 506.04
+  },
+  {
+   "numbers": [
+    17
+   ],
+   "part": 2,
+   "start": 510.22,
+   "source": "asr",
+   "verified": true,
+   "end": 528.0
+  },
+  {
+   "numbers": [
+    18
+   ],
+   "part": 2,
+   "start": 532.16,
+   "source": "asr",
+   "verified": true,
+   "end": 548.56
+  },
+  {
+   "numbers": [
+    19
+   ],
+   "part": 2,
+   "start": 552.7,
+   "source": "asr",
+   "verified": true,
+   "end": 569.52
+  },
+  {
+   "numbers": [
+    20
+   ],
+   "part": 2,
+   "start": 573.66,
+   "source": "asr",
+   "verified": true,
+   "end": 591.1
+  },
+  {
+   "numbers": [
+    21
+   ],
+   "part": 2,
+   "start": 595.2,
+   "source": "asr",
+   "verified": true,
+   "end": 612.44
+  },
+  {
+   "numbers": [
+    22
+   ],
+   "part": 2,
+   "start": 616.6,
+   "source": "asr",
+   "verified": true,
+   "end": 632.74
+  },
+  {
+   "numbers": [
+    23
+   ],
+   "part": 2,
+   "start": 636.9,
+   "source": "asr",
+   "verified": true,
+   "end": 653.84
+  },
+  {
+   "numbers": [
+    24
+   ],
+   "part": 2,
+   "start": 657.96,
+   "source": "asr",
+   "verified": true,
+   "end": 674.74
+  },
+  {
+   "numbers": [
+    25
+   ],
+   "part": 2,
+   "start": 678.86,
+   "source": "asr",
+   "verified": true,
+   "end": 696.26
+  },
+  {
+   "numbers": [
+    26
+   ],
+   "part": 2,
+   "start": 700.38,
+   "source": "asr",
+   "verified": true,
+   "end": 715.66
+  },
+  {
+   "numbers": [
+    27
+   ],
+   "part": 2,
+   "start": 719.78,
+   "source": "asr",
+   "verified": true,
+   "end": 740.58
+  },
+  {
+   "numbers": [
+    28
+   ],
+   "part": 2,
+   "start": 744.74,
+   "source": "asr",
+   "verified": true,
+   "end": 764.34
+  },
+  {
+   "numbers": [
+    29
+   ],
+   "part": 2,
+   "start": 768.48,
+   "source": "recheck",
+   "verified": true,
+   "end": 788.32
+  },
+  {
+   "numbers": [
+    30
+   ],
+   "part": 2,
+   "start": 792.48,
+   "source": "asr",
+   "verified": true,
+   "end": 810.12
+  },
+  {
+   "numbers": [
+    31
+   ],
+   "part": 2,
+   "start": 814.26,
+   "source": "asr",
+   "verified": true,
+   "end": 833.3
+  },
+  {
+   "numbers": [
+    32,
+    33,
+    34
+   ],
+   "part": 3,
+   "start": 865.3,
+   "source": "asr",
+   "verified": true,
+   "end": 937.12
+  },
+  {
+   "numbers": [
+    35,
+    36,
+    37
+   ],
+   "part": 3,
+   "start": 944.24,
+   "source": "asr",
+   "verified": true,
+   "end": 1028.28
+  },
+  {
+   "numbers": [
+    38,
+    39,
+    40
+   ],
+   "part": 3,
+   "start": 1035.64,
+   "source": "asr",
+   "verified": true,
+   "end": 1110.14
+  },
+  {
+   "numbers": [
+    41,
+    42,
+    43
+   ],
+   "part": 3,
+   "start": 1117.34,
+   "source": "asr",
+   "verified": true,
+   "end": 1189.02
+  },
+  {
+   "numbers": [
+    44,
+    45,
+    46
+   ],
+   "part": 3,
+   "start": 1203.14,
+   "source": "asr",
+   "verified": true,
+   "end": 1284.76
+  },
+  {
+   "numbers": [
+    47,
+    48,
+    49
+   ],
+   "part": 3,
+   "start": 1291.9,
+   "source": "asr",
+   "verified": true,
+   "end": 1368.8
+  },
+  {
+   "numbers": [
+    50,
+    51,
+    52
+   ],
+   "part": 3,
+   "start": 1375.98,
+   "source": "asr",
+   "verified": true,
+   "end": 1459.06
+  },
+  {
+   "numbers": [
+    53,
+    54,
+    55
+   ],
+   "part": 3,
+   "start": 1466.2,
+   "source": "asr",
+   "verified": true,
+   "end": 1546.3
+  },
+  {
+   "numbers": [
+    56,
+    57,
+    58
+   ],
+   "part": 3,
+   "start": 1553.48,
+   "source": "asr",
+   "verified": true,
+   "end": 1632.98
+  },
+  {
+   "numbers": [
+    59,
+    60,
+    61
+   ],
+   "part": 3,
+   "start": 1640.22,
+   "source": "asr",
+   "verified": true,
+   "end": 1719.54
+  },
+  {
+   "numbers": [
+    62,
+    63,
+    64
+   ],
+   "part": 3,
+   "start": 1726.72,
+   "source": "asr",
+   "verified": true,
+   "end": 1800.92
+  },
+  {
+   "numbers": [
+    65,
+    66,
+    67
+   ],
+   "part": 3,
+   "start": 1819.16,
+   "source": "asr",
+   "verified": true,
+   "end": 1899.66
+  },
+  {
+   "numbers": [
+    68,
+    69,
+    70
+   ],
+   "part": 3,
+   "start": 1910.82,
+   "source": "asr",
+   "verified": true,
+   "end": 1999.06
+  },
+  {
+   "numbers": [
+    71,
+    72,
+    73
+   ],
+   "part": 4,
+   "start": 2036.02,
+   "source": "asr",
+   "verified": true,
+   "end": 2114.34
+  },
+  {
+   "numbers": [
+    74,
+    75,
+    76
+   ],
+   "part": 4,
+   "start": 2121.48,
+   "source": "asr",
+   "verified": true,
+   "end": 2210.18
+  },
+  {
+   "numbers": [
+    77,
+    78,
+    79
+   ],
+   "part": 4,
+   "start": 2217.5,
+   "source": "asr",
+   "verified": true,
+   "end": 2301.92
+  },
+  {
+   "numbers": [
+    80,
+    81,
+    82
+   ],
+   "part": 4,
+   "start": 2309.34,
+   "source": "asr",
+   "verified": true,
+   "end": 2392.18
+  },
+  {
+   "numbers": [
+    83,
+    84,
+    85
+   ],
+   "part": 4,
+   "start": 2406.22,
+   "source": "asr",
+   "verified": true,
+   "end": 2481.06
+  },
+  {
+   "numbers": [
+    86,
+    87,
+    88
+   ],
+   "part": 4,
+   "start": 2488.24,
+   "source": "asr",
+   "verified": true,
+   "end": 2564.44
+  },
+  {
+   "numbers": [
+    89,
+    90,
+    91
+   ],
+   "part": 4,
+   "start": 2571.7,
+   "source": "asr",
+   "verified": true,
+   "end": 2651.2
+  },
+  {
+   "numbers": [
+    92,
+    93,
+    94
+   ],
+   "part": 4,
+   "start": 2658.38,
+   "source": "asr",
+   "verified": true,
+   "end": 2752.3
+  },
+  {
+   "numbers": [
+    95,
+    96,
+    97
+   ],
+   "part": 4,
+   "start": 2759.48,
+   "source": "asr",
+   "verified": true,
+   "end": 2844.4
+  },
+  {
+   "numbers": [
+    98,
+    99,
+    100
+   ],
+   "part": 4,
+   "start": 2855.52,
+   "source": "asr",
+   "verified": true,
+   "end": 2943.9
+  }
+ ],
+ "createdAt": 1791142275090,
+ "model": "faster-whisper small.en"
+}
